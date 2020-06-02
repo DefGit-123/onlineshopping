@@ -1,0 +1,110 @@
+#%RAML 1.0
+title: craft-online-shopping API
+
+types:
+  user: !include type/user.raml 
+  userid: !include type/userid.raml
+
+  product: !include type/product.raml
+  productid: !include type/productid.raml
+
+  order:  !include type/order.raml
+  orderid:  !include type/orderid.raml
+
+  category: !include type/category.raml
+  categoryid: !include type/categoryid.raml
+
+/users:
+  get:
+    responses:
+      200:
+        body:
+          application/json:
+            type: user[]
+            example:  !include example/user.raml
+/user:
+  post:
+    body:
+      application/json:
+        type: 
+        example:  !include example/user.raml  
+    responses:
+      201:
+       body:
+        application/json:
+          type: 
+          example:  !include example/userPOST.raml     
+
+/users/{id}:
+  uriParameters:
+    uid: integer
+  get:
+    responses:
+      200:
+       body:
+         application/json:
+           type: user
+           example: !include example/user.raml 
+
+/products:
+  get:
+    responses:
+      200:
+        body:
+          application/json:
+            type: product[]
+            example:  !include example/product.raml
+
+/products/{id}:
+  uriParameters:
+    uid: integer
+  get:
+    responses:
+      200:
+       body:
+         application/json:
+           type: productid
+           example: !include example/productid.raml
+
+/orders:
+  get:
+    responses:
+      200:
+        body:
+          application/json:
+            type: order[]
+            example:  !include example/order.raml  
+  post:
+   body:
+    application/json:
+     example: !include example/orderPOST.raml          
+             
+/orders/{id}:
+  uriParameters:
+    uid: integer
+  get:
+    responses:
+      200:
+       body:
+         application/json:
+           type: orderid
+           example: !include example/orderid.raml
+
+/categories:
+  get:
+    responses:
+      200:
+        body:
+          application/json:
+            type: category[]
+            example:  
+               
+/categories{id}:
+  get:
+    responses:
+      200:
+        body:
+          application/json:
+            example:  !include example/categoryid.raml
+
+

@@ -1,0 +1,16 @@
+#%RAML 1.0
+baseUri: https://anypoint.mulesoft.com/mocking/api/v1/links/761bce4d-8108-43aa-a687-9005826db143/ # 
+title: user
+
+types:
+  user:
+    type: object
+    properties:
+      username:
+        type: string
+        required: true
+      email: 
+        type: string
+        required: true
+    example:
+      {"username": "test", "email": "test@gmail.com"}

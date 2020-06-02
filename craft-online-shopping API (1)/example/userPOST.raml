@@ -1,0 +1,16 @@
+#%RAML 1.0
+title: userPOST
+
+types:
+  user:
+    type: object
+    properties:
+      username:
+        type: string
+        required: true
+      email: 
+        type: string
+        required: true     
+    example:
+            {"email": "test@gmail.com",
+              "username": "test"} 

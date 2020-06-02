@@ -1,0 +1,23 @@
+#%RAML 1.0
+title: order
+
+types:
+  order:
+    properties:
+      orderid:
+        type: integer
+        required: true
+      userid: 
+        type: integer
+      addressid:
+        type: string
+      discounted:
+        type: string
+      created:
+        type: datetime
+      modified:
+        type: string
+      status:
+        type: string  
+      amount:
+        type: integer 
